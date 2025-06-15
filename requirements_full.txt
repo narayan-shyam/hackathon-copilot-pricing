@@ -1,0 +1,33 @@
+# Full ML Project Requirements Template
+# This file contains all dependencies for the generated ML projects
+
+# Core ML libraries
+pandas>=1.5.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# MLflow (using shorter path version)
+mlflow-skinny>=2.0.0
+
+# Data processing
+PyYAML>=6.0
+joblib>=1.3.0
+
+# Azure integration (optional)
+azure-keyvault-secrets>=4.7.0
+azure-identity>=1.13.0
+
+# Development tools
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+
+# API and web (lightweight versions)
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+requests>=2.31.0
+
+# Utilities
+click>=8.1.0
+tqdm>=4.65.0
+python-dotenv>=1.0.0
