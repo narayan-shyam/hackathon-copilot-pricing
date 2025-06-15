@@ -1,4 +1,3 @@
-
 Project Summary
 Title:
 AI-Assisted Automated Deployment of ML Models and Dynamic Pricing Strategy for GlobalMart
@@ -95,5 +94,48 @@ Note: I am asked to uupplooad code
 Click to upload or drag and drop - Up to 3 files in any format - Each file must be no larger than 10 MB
 
 =======
+
+I moved the code to this path to reduce the big file path size:
+D:\Narayan\Work\hackathon-copilot-pricing
+Scan the code in this path and start making code changes for Module 2
+
 Module 2 requirements:
 
+Overview
+In this module, you will build the core of the machine learning pipeline, focusing on data preprocessing, cleaning, and feature engineering. GitHub Copilot will assist in automating repetitive tasks, like feature extraction, and help select the most suitable machine learning algorithms for the problem. The model development will also include hyperparameter tuning and cross-validation to improve performance.
+
+Goals
+Leverage GitHub Copilot to generate comprehensive data preprocessing pipelines with automated validation, schema checking, and quality assessment utilities
+Utilize GitHub Copilot for creating sophisticated feature engineering code
+Apply GitHub Copilot assistance to implement multiple ML algorithm experimentation frameworks with hyperparameter tuning and cross-validation patterns
+Use GitHub Copilot to generate MLflow integration code for automated experiment tracking, model versioning, and performance comparison utilities
+Employ GitHub Copilot for developing model evaluation frameworks with business-specific metrics for dynamic pricing optimization
+Integrate GitHub Copilot-generated time series analysis components for seasonal patterns and trend decomposition in pricing data
+
+Expected Outcomes
+Complete data pipeline infrastructure built with GitHub Copilot assistance ensuring robust data ingestion, validation, and preprocessing capabilities
+Advanced feature engineering modules created using GitHub Copilot suggestions for pricing elasticity, customer segmentation, and inventory analytics
+Comprehensive model development framework implemented with GitHub Copilot-generated algorithms, optimization routines, and evaluation metrics
+Full MLflow experiment tracking system established using GitHub Copilot for automated logging, model registry management, and comparison workflows
+Production-ready model evaluation suite developed with GitHub Copilot assistance measuring both statistical and business performance metrics
+Scalable model training pipeline created using GitHub Copilot patterns supporting multiple algorithms and automated hyperparameter optimization
+
+Q&A:
+1. What are the differences between MSE, RMSE, and R2 as evaluation metrics, and when would you choose one over the other?
+The difference between MSE, RMSE and R2 as evaluation metric are: <provide answer>
+
+2. Which of the following techniques would be most suitable for a regression task where you want to penalize large feature coefficients to avoid overfitting?
+
+A basic regression model
+A regression model with regularization
+A non-linear regression model
+A regression model with feature selection
+
+Submit your dynamic_pricing_pipeline.py file that implements a complete machine learning pipeline for dynamic pricing using GitHub Copilot assistance. Your implementation should include:
+
+Data preprocessing and validation pipeline with quality checks
+Feature engineering for pricing elasticity, customer behavior, and inventory optimization
+Multiple model training algorithms with hyperparameter optimization
+MLflow integration for experiment tracking and model registry
+Model evaluation with both statistical and business metrics
+Automated model selection and performance comparison
