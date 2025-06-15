@@ -1,0 +1,6 @@
+Column Name,Data Type,Description
+TransactionDate,object,Date at which transaction is made
+MRP,float64,MRP at which the product is sold
+NoPromoPrice,float64,Price of product after discount
+SellingPrice,float64,Price at which product is sold after discounts (if applicable)
+UnitsSold,int64,Number of units sold of the product

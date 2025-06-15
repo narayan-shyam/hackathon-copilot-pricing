@@ -1,0 +1,14 @@
+Column Name,Data Type,Description
+Date,object,Date of inventory data capture
+FC_ID,object,Fulfillment Center Identifier
+IsMetro,bool,Boolean flag indicating if FC is located in a metro city
+StockStart,int64,Stock count at the beginning of the day
+Demand,int64,Forecasted or actual customer demand for the day
+DemandFulfilled,int64,Demand successfully fulfilled on the same day
+Backorders,int64,Orders that could not be fulfilled due to insufficient stock
+StockEnd,int64,Stock remaining at the end of the day
+ReorderPoint,int64,Pre-defined threshold for reordering inventory
+OrderPlaced,int64,Whether a reorder request was triggered
+OrderQty,int64,Quantity ordered for replenishment
+LeadTimeFloat,float64,Lead time for replenishment in days (can be fractional)
+SafetyStock,int64,Extra inventory kept to mitigate uncertainty in demand/supply

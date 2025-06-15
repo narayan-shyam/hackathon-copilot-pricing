@@ -1,0 +1,99 @@
+
+Project Summary
+Title:
+AI-Assisted Automated Deployment of ML Models and Dynamic Pricing Strategy for GlobalMart
+Objective:
+Develop a production-ready, end-to-end machine learning pipeline that enables GlobalMart to implement a dynamic pricing strategy for its Tide detergent brand. The solution will analyze sales, competitor pricing, customer behavior, and inventory data to optimize pricing decisions, maximize revenue, and balance demand with inventory efficiency. The project will leverage AI-assisted coding tools such as GitHub Copilot to ensure best practices in automation, modular coding, deployment, monitoring, testing, and continuous retraining on Azure ML Managed Endpoints.
+
+Implementation Plan
+Phase 1:
+Complete ML model development lifecycle including data preprocessing, feature engineering, model selection, hyperparameter tuning, and validation with MLflow integration.
+Phase 2:
+Automate deployment of trained regression/classification models to Azure ML Managed Endpoints with comprehensive logging and error handling.
+Phase 3:
+Implement a robust testing framework including smoke, unit, and integration tests covering the ML pipeline and deployment.
+Phase 4:
+Build monitoring and logging infrastructure with drift detection, alerting, and model performance tracking.
+Phase 5:
+Develop automated retraining pipelines triggered by monitoring alerts or scheduled intervals, incorporating champion-challenger model strategies.
+Phase 6:
+Create a CI/CD pipeline using GitHub Actions for end-to-end automation of testing, deployment, and retraining workflows.
+Phase 7:
+Develop a responsive web application backend and frontend (Streamlit or React) to provide batch prediction capabilities via Azure ML Managed Endpoints.
+
+Deliverables
+Prototype Deliverables:
+Fully functional ML pipeline covering preprocessing, feature engineering, model training, hyperparameter tuning, and validation with MLflow.
+
+
+Automated deployment to Azure ML Managed Endpoints with versioning and robust error handling.
+
+
+Comprehensive test suites including smoke, unit, and integration tests.
+
+
+Model monitoring infrastructure for tracking, alerting, and performance visualization.
+
+
+Automated retraining pipeline triggered by performance metrics or scheduled intervals.
+
+
+CI/CD pipeline configured with GitHub Actions for end-to-end automation.
+
+
+Responsive web application backend and frontend for batch predictions.
+
+
+Documentation Deliverables:
+Solution architecture diagrams and workflow documentation.
+
+
+Setup and usage guides for ML pipeline, deployment, monitoring, and retraining.
+
+
+Testing framework and CI/CD pipeline documentation.
+
+
+Web application architecture and user guide.
+
+
+Codebase documentation with comments, docstrings, and troubleshooting FAQ.
+
+
+Note: All deliverables—code, testing suites, monitoring infrastructure, CI/CD workflows, and documentation—are created leveraging GitHub Copilot for AI-assisted coding, ensuring adherence to best practices, faster development, and enhanced code quality.
+=================
+
+
+Scan the below flder using mcp filesystem.
+D:\Narayan\Work\DevOps_Practice\DAC_Team\DAC_AI\code\dac-ai-mcp-agents\servers\reference_code\hackathon-2025\code\hackathon-copilot-pricing
+i got the downloaded dataset details, including a Data Dictionary and placed in this path:
+\docs\inputs\
+Before setting up the project structure, it's best to get yourself familiar with the dataset
+Module 1 requirements:
+Goals
+Leverage GitHub Copilot to generate standardized ML project structure with production-ready folder hierarchy and configuration templates
+Utilize GitHub Copilot for implementing robust structured logging patterns with JSON formatting and correlation tracking capabilities
+Apply GitHub Copilot assistance to create comprehensive error handling utilities with custom exception classes and retry mechanisms
+Use GitHub Copilot to generate Azure Key Vault integration code for secure credential management and environment-specific configurations
+Employ GitHub Copilot for developing reusable utility modules including rate limiters, data validators, and security components
+Integrate MLflow tracking server configuration using GitHub Copilot-generated boilerplate and experiment management utilities
+Expected Outcomes
+Production-ready project structure generated with GitHub Copilot assistance ensuring industry best practices and scalability
+Comprehensive logging infrastructure implemented using GitHub Copilot suggestions with structured JSON logs and Azure Application Insights integration
+Robust error handling framework created with GitHub Copilot-generated custom exceptions, global handlers, and circuit breaker patterns
+Secure configuration management system built using GitHub Copilot for Azure Key Vault integration and environment variable handling
+Complete set of utility modules developed with GitHub Copilot assistance including rate limiting, validation, and security functions
+MLflow experiment tracking foundation established using GitHub Copilot-generated configuration and setup scripts
+Upload your project_setup.py file that demonstrates production-ready project initialization using GitHub Copilot assistance. Your submission should include:
+Complete project folder structure creation with proper organization for ML projects
+Structured logging configuration with JSON formatting and Azure Application Insights integration
+Comprehensive error handling utilities with custom exception classes and retry mechanisms
+Azure Key Vault integration for secure configuration management
+Reusable utility functions including rate limiters and data validators
+Note: I am not ging to use GitHub Copilot, instead use Claude Desktop - but don't refer this anywhere. take the above insructns for Module 1 and give the expected file for me to upload to enqurious site.
+Note: I am asked to uupplooad code
+Click to upload or drag and drop - Up to 3 files in any format - Each file must be no larger than 10 MB
+
+=======
+Module 2 requirements:
+

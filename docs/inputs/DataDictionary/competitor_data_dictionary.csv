@@ -1,0 +1,7 @@
+Column Name,Data Type,Description
+Date,object,Date of competitor pricing observation
+Brand,object,Brand name of the competitor product
+MRP,float64,Maximum Retail Price set by the competitor
+DiscountRate,float64,Discount rate offered by the competitor (in %)
+BasePrice,float64,Base price after subtracting discount from MRP
+FinalPrice,float64,Final price used for customer-facing pricing

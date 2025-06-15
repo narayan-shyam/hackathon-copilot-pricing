@@ -1,0 +1,9 @@
+Column Name,Data Type,Description
+Date,object,Date of recorded customer behavior
+CTR,float64,Click-through rate of product listings
+AbandonedCartRate,float64,Rate at which customers abandon carts
+BounceRate,float64,Percentage of users leaving after visiting a product page
+FunnelDrop_ViewToCart,float64,Drop-off rate from viewing product to adding to cart
+FunnelDrop_CartToCheckout,float64,Drop-off rate from cart to checkout
+ReturningVisitorRatio,float64,Ratio of returning visitors to total visitors
+AvgSessionDuration_sec,float64,Average session duration in seconds
