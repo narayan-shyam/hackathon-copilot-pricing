@@ -215,6 +215,46 @@ class TestAdvancedValidation:
         preds_south = pipeline.predict(new_data)
         assert abs(np.mean(preds_north) - np.mean(preds_south)) < 0.5 * np.mean(preds_north)
 
+# MLflow model validation test
+    @pytest.mark.integration
+    def test_mlflow_run_and_metrics(self, sample_data):
+        """Test that MLflow run is created and metrics are logged"""
+        try:
+            import mlflow
+        except ImportError:
+            pytest.skip("MLflow not installed")
+
+        from unified_dynamic_pricing import UnifiedDynamicPricingPipeline, create_pipeline_config
+
+        # Enable MLflow in config
+        config = create_pipeline_config({'model_trainer': {'enable_mlflow': True}})
+        pipeline = UnifiedDynamicPricingPipeline(config)
+
+        # Get current MLflow experiment info
+        experiment_name = pipeline.model_trainer.experiment_name
+        experiment = mlflow.get_experiment_by_name(experiment_name)
+        existing_run_ids = set()
+        if experiment:
+            for run in mlflow.search_runs(experiment.experiment_id):
+                existing_run_ids.add(run.run_id)
+
+        # Run the pipeline
+        results = pipeline.run_complete_pipeline(
+            sample_data, target_column='SellingPrice', test_size=0.2
+        )
+
+        # Check that a new MLflow run was created
+        experiment = mlflow.get_experiment_by_name(experiment_name)
+        assert experiment is not None
+        runs = mlflow.search_runs(experiment.experiment_id)
+        new_runs = [run for run in runs.itertuples() if run.run_id not in existing_run_ids]
+        assert len(new_runs) > 0
+
+        # Check that metrics were logged in the new run
+        last_run = new_runs[-1]
+        metrics = last_run._asdict()
+        assert "cv_r2_score" in metrics or "test_r2" in metrics
+          
 
 
 # Test markers for different test categories
