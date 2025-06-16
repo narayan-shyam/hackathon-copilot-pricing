@@ -41,12 +41,11 @@ az storage account keys list \
   --account-name oopsallaiadls \
   --query '[0].value' -o tsv
 
-  output=y1gFhRFqb9XnP0SwGSn3bdF+Hdtl/xBctKIfuSguwzRKEhzPjNqLTsXWtj+q+piLchMpN0wLMz+a+AStuIGDCA==
 
 # Store this key in Key Vault:
 # Store storage key in Key Vault (replace YOUR_STORAGE_KEY with actual key)
 az keyvault secret set \
   --vault-name oopsallai-kv \
   --name "storage-account-key" \
-  --value "y1gFhRFqb9XnP0SwGSn3bdF+Hdtl/xBctKIfuSguwzRKEhzPjNqLTsXWtj+q+piLchMpN0wLMz+a+AStuIGDCA==" \
+  --value "<storage account key>" \
   --subscription TPL-2025
