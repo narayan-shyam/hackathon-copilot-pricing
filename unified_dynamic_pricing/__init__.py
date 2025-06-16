@@ -12,9 +12,15 @@ This unified pipeline combines all functionality from both modules:
 """
 
 from .pipeline.dynamic_pricing_pipeline import UnifiedDynamicPricingPipeline
+from .pipeline.azure_enhanced_pipeline import AzureEnhancedPricingPipeline
 from .pipeline.data_processor import UnifiedDataProcessor
 from .pipeline.feature_engineer import UnifiedFeatureEngineer
 from .pipeline.model_trainer import UnifiedModelTrainer
+from .azure_integrations import (
+    ADLSManager, AzureKeyVaultManager, AzureMLManager, 
+    DatabricksManager, AzureMonitoringManager
+)
+from .config import get_azure_config, create_azure_pipeline_config, validate_azure_setup
 from .utils import (
     create_sample_pricing_data,
     print_pipeline_results,
@@ -29,11 +35,24 @@ __author__ = "Dynamic Pricing Team"
 __all__ = [
     # Main Pipeline
     'UnifiedDynamicPricingPipeline',
+    'AzureEnhancedPricingPipeline',
     
     # Pipeline Components
     'UnifiedDataProcessor',
     'UnifiedFeatureEngineer', 
     'UnifiedModelTrainer',
+    
+    # Azure Integrations
+    'ADLSManager',
+    'AzureKeyVaultManager',
+    'AzureMLManager',
+    'DatabricksManager',
+    'AzureMonitoringManager',
+    
+    # Azure Configuration
+    'get_azure_config',
+    'create_azure_pipeline_config',
+    'validate_azure_setup',
     
     # Utility Functions
     'create_sample_pricing_data',

@@ -1,33 +1,146 @@
-# Full ML Project Requirements Template
-# This file contains all dependencies for the generated ML projects
+# ============================================================================
+# DYNAMIC PRICING PIPELINE - CONSOLIDATED REQUIREMENTS
+# Unified dependencies for complete ML pipeline and Azure deployment
+# ============================================================================
 
-# Core ML libraries
-pandas>=1.5.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
+# ============================================================================
+# CORE ML & DATA PROCESSING
+# ============================================================================
+pandas>=2.0.0                    # Data manipulation and analysis
+numpy>=1.24.0                    # Numerical computing
+scikit-learn>=1.3.0              # Machine learning algorithms
+joblib>=1.3.0                    # Model serialization
 
-# MLflow (using shorter path version)
-mlflow-skinny>=2.0.0
+# ============================================================================
+# ENHANCED ML LIBRARIES (Optional but recommended)
+# ============================================================================
+xgboost>=1.7.0                   # Gradient boosting (optional)
+lightgbm>=4.0.0                  # Light gradient boosting (optional)
 
-# Data processing
-PyYAML>=6.0
-joblib>=1.3.0
+# ============================================================================
+# MLFLOW & EXPERIMENT TRACKING
+# ============================================================================
+mlflow>=2.8.0                    # Complete MLflow with UI
+# Alternative for minimal installs:
+# mlflow-skinny>=2.8.0           # MLflow without UI (uncomment if preferred)
 
-# Azure integration (optional)
-azure-keyvault-secrets>=4.7.0
-azure-identity>=1.13.0
+# ============================================================================
+# AZURE CLOUD SERVICES
+# ============================================================================
 
-# Development tools
-pytest>=7.4.0
-black>=23.0.0
-flake8>=6.0.0
+# Azure Core & Authentication
+azure-identity>=1.15.0           # Azure authentication
+azure-core>=1.29.0               # Azure core functionality
 
-# API and web (lightweight versions)
-fastapi>=0.100.0
-uvicorn[standard]>=0.23.0
-requests>=2.31.0
+# Azure Machine Learning
+azure-ai-ml>=1.12.0              # Azure ML SDK v2 (latest)
+azureml-core>=1.48.0             # Azure ML SDK v1 (legacy support)
 
-# Utilities
-click>=8.1.0
-tqdm>=4.65.0
-python-dotenv>=1.0.0
+# Azure Storage & Data Lake
+azure-storage-blob>=12.19.0      # Blob storage operations
+azure-storage-file-datalake>=12.14.0  # ADLS Gen2 operations
+
+# Azure Key Vault & Security
+azure-keyvault-secrets>=4.7.0    # Secure credential management
+
+# Azure Monitoring & Telemetry
+#azure-monitor-opentelemetry>=1.0.0        # Modern telemetry
+#azure-monitor-opentelemetry-exporter>=1.0.0  # Telemetry export
+opencensus-ext-azure>=1.1.13     # Legacy telemetry support
+applicationinsights>=0.11.10     # Application insights
+
+# ============================================================================
+# DATABRICKS & SPARK
+# ============================================================================
+databricks-sql-connector>=2.5.0  # Databricks SQL connectivity
+pyspark>=3.3.0                   # Apache Spark for distributed processing
+
+# ============================================================================
+# API & WEB FRAMEWORKS
+# ============================================================================
+requests>=2.31.0                 # HTTP client library
+urllib3>=2.0.0                   # URL handling utilities
+fastapi>=0.100.0                 # Modern async web framework
+uvicorn[standard]>=0.23.0        # ASGI server for FastAPI
+
+# ============================================================================
+# DATA VALIDATION & CONFIGURATION
+# ============================================================================
+pydantic>=2.5.0                  # Data validation and settings
+python-dotenv>=1.0.0             # Environment variable management
+PyYAML>=6.0                      # YAML configuration files
+
+# ============================================================================
+# VISUALIZATION & REPORTING
+# ============================================================================
+matplotlib>=3.7.0                # Basic plotting
+seaborn>=0.12.0                  # Statistical visualization
+plotly>=5.17.0                   # Interactive visualizations
+
+# ============================================================================
+# DEVELOPMENT & TESTING
+# ============================================================================
+pytest>=7.4.0                    # Testing framework
+pytest-asyncio>=0.21.0           # Async testing support
+black>=23.0.0                    # Code formatting
+flake8>=6.0.0                    # Code linting
+
+# ============================================================================
+# UTILITIES & PRODUCTIVITY
+# ============================================================================
+click>=8.1.0                     # Command line interfaces
+tqdm>=4.65.0                     # Progress bars
+ipykernel>=6.0.0                 # Jupyter kernel support
+
+# ============================================================================
+# NOTEBOOK & INTERACTIVE DEVELOPMENT
+# ============================================================================
+jupyter>=1.0.0                   # Jupyter notebook support
+ipywidgets>=8.0.0                # Interactive widgets
+
+# ============================================================================
+# INSTALLATION NOTES
+# ============================================================================
+# 
+# BASIC INSTALLATION (Core features only):
+# pip install -r requirements.txt --only-core
+# 
+# FULL INSTALLATION (All features):
+# pip install -r requirements.txt
+# 
+# AZURE ONLY (For deployment):
+# pip install azure-ai-ml azure-identity requests pandas scikit-learn mlflow
+# 
+# DEVELOPMENT SETUP:
+# pip install -r requirements.txt
+# pip install -e .  # Install project in development mode
+# 
+# ============================================================================
+# OPTIONAL DEPENDENCIES BY USE CASE
+# ============================================================================
+# 
+# For LOCAL DEVELOPMENT only:
+# - Remove: azure-* packages, databricks-sql-connector, pyspark
+# - Keep: pandas, scikit-learn, mlflow, matplotlib
+# 
+# For AZURE DEPLOYMENT only:
+# - Remove: jupyter, ipywidgets, matplotlib, seaborn, plotly
+# - Keep: azure-*, pandas, scikit-learn, mlflow, requests
+# 
+# For DATABRICKS only:
+# - Remove: azure-ai-ml, fastapi, uvicorn
+# - Keep: databricks-sql-connector, pyspark, mlflow
+# 
+# ============================================================================
+# VERSION COMPATIBILITY
+# ============================================================================
+# 
+# Python: >=3.8,<3.12
+# 
+# Tested combinations:
+# - Python 3.8 + pandas 2.0 + scikit-learn 1.3
+# - Python 3.9 + pandas 2.1 + scikit-learn 1.4  
+# - Python 3.10 + pandas 2.2 + scikit-learn 1.5
+# - Python 3.11 + pandas 2.2 + scikit-learn 1.5
+# 
+# ============================================================================
