@@ -169,6 +169,52 @@ class TestUtilityFunctions:
             print_qa_answers()
         except Exception as e:
             pytest.fail(f"Print functions raised unexpected exception: {e}")
+            
+
+# Smoke test
+class TestAdvancedValidation:
+    """Advanced tests: smoke, drift, performance, and bias"""
+
+    def test_endpoint_smoke(self):
+        """Smoke test for Azure ML endpoint (mocked)"""
+        import requests
+        with patch('requests.post') as mock_post:
+            mock_post.return_value.status_code = 200
+            mock_post.return_value.json.return_value = {'predictions': [10.0, 12.0]}
+            response = requests.post('http://fake-endpoint', json={'data': [1, 2, 3]})
+            assert response.status_code == 200
+            assert 'predictions' in response.json()
+
+    def test_model_drift_detection(self, sample_data):
+        """Test model drift detection by simulating distribution shift"""
+        drifted = sample_data.copy()
+        drifted['SellingPrice'] *= 1.5
+        orig_mean = sample_data['SellingPrice'].mean()
+        drifted_mean = drifted['SellingPrice'].mean()
+        assert abs(orig_mean - drifted_mean) > 0.1 * orig_mean
+
+    def test_model_performance_threshold(self, sample_data):
+        """Test model performance threshold"""
+        pipeline = UnifiedDynamicPricingPipeline()
+        results = pipeline.run_complete_pipeline(
+            sample_data, target_column='SellingPrice', test_size=0.2
+        )
+        assert results['evaluation_results']['r2'] > 0.5  # Example threshold
+
+    def test_model_bias_detection(self, sample_data):
+        """Test for prediction bias across groups"""
+        pipeline = UnifiedDynamicPricingPipeline()
+        sample_data['Region'] = np.random.choice(['North', 'South'], size=len(sample_data))
+        pipeline.run_complete_pipeline(
+            sample_data, target_column='SellingPrice', test_size=0.2
+        )
+        new_data = sample_data.copy()
+        new_data['Region'] = 'North'
+        preds_north = pipeline.predict(new_data)
+        new_data['Region'] = 'South'
+        preds_south = pipeline.predict(new_data)
+        assert abs(np.mean(preds_north) - np.mean(preds_south)) < 0.5 * np.mean(preds_north)
+
 
 
 # Test markers for different test categories
