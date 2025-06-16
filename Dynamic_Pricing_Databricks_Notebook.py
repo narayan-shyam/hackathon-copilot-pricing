@@ -307,6 +307,7 @@ def train_pricing_models(df):
     print(f"📊 Training data: {X.shape[0]} samples, {X.shape[1]} features")
     print(f"🎯 Target: {target_column}")
     
+    
     # Split data
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
